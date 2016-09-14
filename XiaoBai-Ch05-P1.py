@@ -24,7 +24,7 @@ def roll_result(total):
 def start_game(init_money=1000):
     print('<<<<< GAME STARTS! >>>>>')
     choices = ['Big', 'Small']
-    your_choice = input('Big or Small or End:')
+    your_choice = input('Big / Small / Help / End:')
     if your_choice in choices:
         points = roll_dice()
         total = sum(points)
@@ -52,21 +52,21 @@ def start_game(init_money=1000):
     elif your_choice == 'End':
         print('Your account is', init_money, '!\nBye!')
         return 1
+    elif your_choice == 'Help':
+        print('''
+         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><
+         > This is a rolling dice game.                        <
+         > Choose big or small before you bet.                 <
+         > The default total amount in your account is $1000.  <
+         > Bet at least $10 one time.                          <
+         > Enter 'End' to end the game.                        <
+         > Good Luck!                                          <
+         <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+         ''')
+        start_game(init_money)
     else:
         print('Invalid Words')
         start_game(init_money)
-
-
-print('''
-     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><
-     > This is a rolling dice game.                        <
-     > Choose big or small before you bet.                 <
-     > The default total amount in your account is $1000.  <
-     > Bet at least $10 one time.                          <
-     > Enter 'End' to end the game.                        <
-     > Good Luck!                                          <
-     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-     ''')
 
 
 start_game()
